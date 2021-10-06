@@ -30,10 +30,9 @@ DELETE:  http://localhost:8080/api/v1/person/{id}
 
 
 The live API is avaliable at:
-```
-https://dio-peopleapi-spring.herokuapp.com/
-```
+
+<a href=https://dio-peopleapi-spring.herokuapp.com/>https://dio-peopleapi-spring.herokuapp.com/</a>
+
 And the Swagger docs are here:
-```
-https://dio-peopleapi-spring.herokuapp.com/swagger-ui/#/
-```
+
+<a href=https://dio-peopleapi-spring.herokuapp.com/swagger-ui/#/>https://dio-peopleapi-spring.herokuapp.com/swagger-ui/#/</a>
