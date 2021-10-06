@@ -8,6 +8,7 @@ import one.digitalinnovation.personapi.dto.request.PersonDTO;
 import one.digitalinnovation.personapi.entity.Person;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Collections;
 
 public class PersonUtils {
@@ -20,10 +21,11 @@ public class PersonUtils {
 
     public static PersonDTO createFakeDTO() {
         return PersonDTO.builder()
+                .id(PERSON_ID)
                 .firstName(FIRST_NAME)
                 .lastName(LAST_NAME)
                 .cpf(CPF_NUMBER)
-                .birthDate("04-04-2010")
+                .birthDate(BIRTH_DATE.format(DateTimeFormatter.ISO_LOCAL_DATE))
                 .phones(Collections.singletonList(PhoneUtils.createFakeDTO()))
                 .build();
     }
