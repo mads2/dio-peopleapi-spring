@@ -8,6 +8,7 @@ The stack consists mainly of:
 * H2 and JPA
 * Mapstruct
 * Mockito
+* Swagger
 * Heroku free cloud service
 * Java 11
 
@@ -31,4 +32,8 @@ DELETE:  http://localhost:8080/api/v1/person/{id}
 The live API is avaliable at:
 ```
 https://dio-peopleapi-spring.herokuapp.com/
+```
+And the Swagger docs are here:
+```
+https://dio-peopleapi-spring.herokuapp.com/swagger-ui/#/
 ```
