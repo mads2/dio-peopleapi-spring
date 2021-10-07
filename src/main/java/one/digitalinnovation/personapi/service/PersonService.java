@@ -2,14 +2,19 @@ package one.digitalinnovation.personapi.service;
 
 import lombok.AllArgsConstructor;
 import one.digitalinnovation.personapi.dto.request.PersonDTO;
+import one.digitalinnovation.personapi.dto.request.PhoneDTO;
 import one.digitalinnovation.personapi.dto.response.MessageResponseDTO;
 import one.digitalinnovation.personapi.entity.Person;
+import one.digitalinnovation.personapi.enums.PhoneType;
 import one.digitalinnovation.personapi.exception.PersonNotFoundException;
 import one.digitalinnovation.personapi.mapper.PersonMapper;
 import one.digitalinnovation.personapi.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
+import javax.persistence.PostLoad;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -60,4 +65,22 @@ public class PersonService {
                 .message(message + id)
                 .build();
     }
+
+    @PostConstruct
+    public void addSomeEntities() {
+        create(PersonDTO.builder()
+                .firstName("Joao")
+                .lastName("Silva")
+                .birthDate("1990-01-15")
+                .cpf("58232347678")
+                .build());
+        create(PersonDTO.builder()
+                .firstName("Maria")
+                .lastName("Clara")
+                .birthDate("1995-12-18")
+                .cpf("65614428658")
+                .phones(List.of(PhoneDTO.builder().number("41991235874").type(PhoneType.MOBILE).build()))
+                .build());
+    }
+
 }
